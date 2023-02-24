@@ -123,6 +123,21 @@ char *getFileType(char uri[])
     type = "Content-Type: text/html\r\n\r\n";
     return type;
   }
+  if (strstr(uri, ".gif") != NULL)
+  {
+    type = "Content-Type: Content-Type: image/gif\r\n\r\n";
+    return type;
+  }
+  if (strstr(uri, ".jpg") != NULL || strstr(uri, ".jpeg") != NULL)
+  {
+    type = "Content-Type: Content-Type: image/jpeg\r\n\r\n";
+    return type;
+  }
+  if (strstr(uri, ".php") != NULL)
+  {
+    type = "Content-Type: application/x-httpd-php\r\n\r\n";
+    return type;
+  }
 
   return type = "Content-Type: text/html\r\n\r\n";
 }
